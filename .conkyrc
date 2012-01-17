@@ -1,0 +1,42 @@
+background yes
+cpu_avg_samples 1
+double_buffer yes
+no_buffers no
+total_run_times 0
+update_interval 1.0
+
+own_window yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type desktop
+
+alignment top_middle
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 0
+gap_y 0
+maximum_width 1366
+minimum_size 1400 36
+
+format_human_readable yes
+override_utf8_locale yes
+short_units yes
+uppercase no
+use_xft yes
+xftalpha 1
+xftfont terminus:size=8
+
+color0 000000
+color1 ffffff
+color2 1e1e1e
+default_color 666666
+default_outline_color ffffff
+default_shade_color 000000
+own_window_colour 000000
+
+TEXT
+${goto 3}${time %A}${goto 173}${time %B} ${time %d}${if_match ${time %d}==1}st${else}${if_match ${time %d}==2}nd${else}${if_match ${time %d}==3}rd${else}${if_match ${time %d}==4}th${else}${if_match ${time %d}==5}th${else}${if_match ${time %d}==5}th${else}${if_match ${time %d}==7}th${else}${if_match ${time %d}==8}th${else}${if_match ${time %d}==9}th${else}${if_match ${time %d}==10}th${else}${if_match ${time %d}==11}th${else}${if_match ${time %d}==12}th${else}${if_match ${time %d}==13}th${else}${if_match ${time %d}==14}th${else}${if_match ${time %d}==15}th${else}${if_match ${time %d}==16}th${else}${if_match ${time %d}==17}th${else}${if_match ${time %d}==18}th${else}${if_match ${time %d}==19}th${else}${if_match ${time %d}==20}th${else}${if_match ${time %d}==21}st${else}${if_match ${time %d}==22}nd${else}${if_match ${time %d}==23}rd${else}${if_match ${time %d}==24}th${else}${if_match ${time %d}==25}th${else}${if_match ${time %d}==26}th${else}${if_match ${time %d}==27}th${else}${if_match ${time %d}==28}th${else}${if_match ${time %d}==29}th${else}${if_match ${time %d}==30}th${else}${if_match ${time %d}==31}st${else}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}, ${time %Y}${goto 343}${time %I:%M%P %Z}${goto 513}CPU TEMP: ${hwmon temp 1}°C${goto 683}BATTERY: ${battery} ${goto 853}BAT TIME: ${battery_time}${goto 1023}OUTSIDE: ${execi 3600 python ~/.Conky/weather.py KIND}
+${goto 3}KERNEL: ${kernel}${goto 173}CPU: ${cpu cpu0}%${goto 343}RAM: ${memperc}%${goto 513}SWAP: ${swapperc}%${goto 683}PROCESSES: ${processes} (${running_processes})${goto 853}/: ${fs_free /} (${fs_size /} ${fs_free_perc /}%)${goto 1023}/home: ${fs_free /home} (${fs_size /home} ${fs_free_perc /home}%)${goto 1193}
+${goto 3}HOST: ${nodename}${goto 173}UPTIME: ${uptime_short}${goto 343}LAN IP: ${addr wlan0}${goto 513}ESSID: ${wireless_essid wlan0}${goto 683}MAC: ${wireless_ap wlan0}${goto 853}LINK QUALITY: ${wireless_link_qual_perc wlan0}%${goto 1023}Down: ${downspeed wlan0}${goto 1108}Up: ${upspeed wlan0}
